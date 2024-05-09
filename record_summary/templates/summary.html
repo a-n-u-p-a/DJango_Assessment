@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Summary Table</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f9f9f9;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        table th, table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        table th {
+            background-color: #f2f2f2;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Summary Table -->
+        <h2>Summary Table</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>School Name</th>
+                    <th>Sydney Participants</th>
+                    <th>Sydney Percentile</th>
+                    <th>Assessment Area</th>
+                    <th>Award</th>
+                    <th>Class Name</th>
+                    <th>Correct Answer Percentage per Class</th>
+                    <th>Correct Answer</th>
+                    <th>Student Name</th>
+                    <th>Student Score</th>
+                    <th>Subject</th>
+                    <th>Category ID</th>
+                    <th>Year Level Name</th>
+                    <th>Answer ID</th>
+                    <th>Correct Answer ID</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Loop through the summary data and display each row -->
+                {% for record in summary_data %}
+                <tr>
+                    <td>{{ record.school_name }}</td>
+                    <td>{{ record.sydney_participants }}</td>
+                    <td>{{ record.sydney_percentile }}</td>
+                    <td>{{ record.assessment_area }}</td>
+                    <td>{{ record.award }}</td>
+                    <td>{{ record.class_name }}</td>
+                    <td>{{ record.correct_answer_percentage_per_class }}</td>
+                    <td>{{ record.correct_answer }}</td>
+                    <td>{{ record.student_name }}</td>
+                    <td>{{ record.student_score }}</td>
+                    <td>{{ record.subject }}</td>
+                    <td>{{ record.category_id }}</td>
+                    <td>{{ record.year_level_name }}</td>
+                    <td>{{ record.answer_id }}</td>
+                    <td>{{ record.correct_answer_id }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
